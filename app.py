@@ -121,4 +121,7 @@ if st.button("🚀 Générer"):
 اللّهُمَّ آمين يا ربّ العالمين
 """
 
-    st.text_area("📋 Copie WhatsApp", output, height=600)
+#    st.text_area("📋 Copie WhatsApp", output, height=600)
+
+st.code(output)
+st.info("📋 Clique dans le texte puis Ctrl + C (ou appui long sur mobile)")
