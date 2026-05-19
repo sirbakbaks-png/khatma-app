@@ -122,10 +122,3 @@ if st.button("🚀 Générer"):
 """
 
 st.text_area("📋 Résultat", output, height=600, key="khatma_output")
-
-st.markdown("""
-<button onclick="navigator.clipboard.writeText(document.querySelector('textarea').value)"
-style="padding:10px; background-color:#1f7a1f; color:white; border:none; border-radius:8px;">
-📋 Copier le résultat
-</button>
-""", unsafe_allow_html=True)
