@@ -73,7 +73,7 @@ def rotate(lst, n):
 # =========================
 st.set_page_config(page_title="Khatma Generator", layout="centered")
 
-st.title("🕌 Générateur de Khatma OFFICIEL")
+st.title('"🕌 Générateur de Khatma OFFICIEL 🕌"')
 
 khatma_number = st.number_input("🔢 Numéro de khatma", min_value=1, step=1)
 
