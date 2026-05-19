@@ -132,4 +132,5 @@ if "output" in st.session_state:
     # =========================
     # 📄 AFFICHAGE (EDITABLE)
     # =========================
-    st.text_area("📋 Résultat", st.session_state.output, height=600)
+    #st.text_area("📋 Résultat", st.session_state.output, height=600)
+    st.code(st.session_state.output)
