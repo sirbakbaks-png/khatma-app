@@ -122,12 +122,26 @@ if st.button("🚀 Générer"):
 # =========================
 if "output" in st.session_state:
 
-    st.text_area("📋 Résultat", st.session_state.output, height=600)
+    # =========================
+    # 📋 BOUTON COPIER EN HAUT
+    # =========================
+    st.markdown(f"""
+    <button onclick="navigator.clipboard.writeText(`{st.session_state.output.replace('`','')}`)"
+    style="
+    background-color:#1f7a1f;
+    color:white;
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    margin-bottom:10px;
+    ">
+    📋 Copier le résultat
+    </button>
+    """, unsafe_allow_html=True)
 
-    # ✔ COPIE SIMPLE ET FIABLE
-    st.download_button(
-        label="📋 Copier / Télécharger le texte",
-        data=st.session_state.output,
-        file_name="khatma.txt",
-        mime="text/plain"
-    )
+    # =========================
+    # 📄 AFFICHAGE RESULTAT
+    # =========================
+    st.text_area("📋 Résultat", st.session_state.output, height=600)
