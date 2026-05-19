@@ -121,4 +121,33 @@ if st.button("🚀 Générer"):
 اللّهُمَّ آمين يا ربّ العالمين
 """
 
-st.text_area("📋 Résultat", output, height=600, key="khatma_output")
+if "output" not in st.session_state:
+    st.session_state.output = ""
+
+if st.button("🚀 Générer"):
+
+    shift = khatma_number - BASE_KHATMA
+    rotated = rotate(names_base, shift)
+    responsable = rotated[-1]
+    end_date = BASE_DATE + timedelta(days=3 * shift)
+    date_fr = format_date_fr(end_date)
+
+    st.session_state.output = f"""بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+وَالصَّلَاةُ وَالسَّلَامُ عَلَى سَيِّدِنَا وَحَبِيبِنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ
+
+🕌 {khatma_number}ᵉ khatma OFFICIEL 🕌
+📅 Fin : {date_fr} au soir
+👤 Responsable de la khatma : {responsable}
+
+01 – 03 :: (60 – 58) : {rotated[0]}
+04 – 06 :: (57 – 55) : {rotated[1]}
+07 – 09 :: (54 – 52) : {rotated[2]}
+10 – 12 :: (51 – 49) : {rotated[3]}
+16 – 18 :: (45 – 43) : {rotated[5]}
+...
+
+اللّهُمَّ اجعل هذه المشاركة بالآيات القرآنية في صحيفة حسناتكم،
+اللّهُمَّ آمين يا ربّ العالمين
+"""
+
+st.text_area("📋 Résultat", st.session_state.output, height=600)
