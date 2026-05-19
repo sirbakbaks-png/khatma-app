@@ -85,7 +85,7 @@ if st.button("🚀 Générer"):
     end_date = BASE_DATE + timedelta(days=3 * shift)
     date_fr = format_date_fr(end_date)
 
-st.session_state.output = f"""...""".rstrip()بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+    st.session_state.output = f""".rstrip()بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
 وَالصَّلَاةُ وَالسَّلَامُ عَلَى سَيِّدِنَا وَحَبِيبِنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ
 
 🕌 {khatma_number}ᵉ khatma OFFICIEL 🕌
