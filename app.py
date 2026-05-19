@@ -92,7 +92,7 @@ if st.button("🚀 Générer"):
     output = f"""بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
 وَالصَّلَاةُ وَالسَّلَامُ عَلَى سَيِّدِنَا وَحَبِيبِنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ
 
-🕌 {khatma_number}ᵉ khatma OFFICIEL 🕌
+🕌 {khatma_number}ᵉ khatma 🕌
 📅 Fin : {date_fr} au soir
 👤 Responsable de la khatma : {responsable}
 
