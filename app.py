@@ -125,9 +125,9 @@ if "output" in st.session_state:
     # =========================
     # 📋 BOUTON COPIE (NATIVE STREAMLIT)
     # =========================
-    st.code(st.session_state.output)
+    #st.code(st.session_state.output)
 
-    st.info("📋 Clique dans le texte puis fais Ctrl+C (ou appui long sur téléphone)")
+    #st.info("📋 Clique dans le texte puis fais Ctrl+C (ou appui long sur téléphone)")
     
     # =========================
     # 📄 AFFICHAGE (EDITABLE)
