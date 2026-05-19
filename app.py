@@ -1,19 +1,44 @@
 import streamlit as st
 from datetime import datetime, timedelta
-import locale
 
-# 🇫🇷 date en français
-try:
-    locale.setlocale(locale.LC_TIME, "fr_FR.UTF-8")
-except:
-    try:
-        locale.setlocale(locale.LC_TIME, "fr_FR")
-    except:
-        pass
+# =========================
+# 🇫🇷 FORMAT DATE FRANÇAIS FIXE
+# =========================
+
+jours = {
+    "Monday": "Lundi",
+    "Tuesday": "Mardi",
+    "Wednesday": "Mercredi",
+    "Thursday": "Jeudi",
+    "Friday": "Vendredi",
+    "Saturday": "Samedi",
+    "Sunday": "Dimanche"
+}
+
+mois = {
+    "January": "janvier",
+    "February": "février",
+    "March": "mars",
+    "April": "avril",
+    "May": "mai",
+    "June": "juin",
+    "July": "juillet",
+    "August": "août",
+    "September": "septembre",
+    "October": "octobre",
+    "November": "novembre",
+    "December": "décembre"
+}
+
+def format_date_fr(date_obj):
+    raw_day = date_obj.strftime("%A")
+    raw_month = date_obj.strftime("%B")
+    day_num = date_obj.strftime("%d")
+    return f"{jours[raw_day]} {day_num} {mois[raw_month]} {date_obj.year}"
 
 
 # =========================
-# BASE OFFICIELLE KHATMA 138 (TON TEXTE)
+# 🕌 BASE KHATMA 138 OFFICIELLE
 # =========================
 names_base = [
     "Mediba","Saber","Bahich","Kebe","Youssef34",
@@ -30,23 +55,25 @@ blocks = [
 ]
 
 # =========================
-# RÉFÉRENCE
+# 📌 RÉFÉRENCE
 # =========================
 BASE_KHATMA = 138
 BASE_DATE = datetime(2026, 5, 19)
 
-
 # =========================
-# ROTATION (DU HAUT VERS LE BAS)
+# 🔁 ROTATION (bas → haut)
 # =========================
 def rotate(lst, n):
     n = n % len(lst)
     return lst[-n:] + lst[:-n]
 
 
+# =========================
+# 🎯 APP
+# =========================
 st.set_page_config(page_title="Khatma Generator", layout="centered")
 
-st.markdown("## 🕌 Générateur de Khatma **OFFICIEL**")
+st.title("🕌 Générateur de Khatma OFFICIEL")
 
 khatma_number = st.number_input("🔢 Numéro de khatma", min_value=1, step=1)
 
@@ -60,12 +87,12 @@ if st.button("🚀 Générer"):
 
     end_date = BASE_DATE + timedelta(days=3 * shift)
 
-    date_fr = end_date.strftime("%A %d %B %Y")
+    date_fr = format_date_fr(end_date)
 
     output = f"""بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
 وَالصَّلَاةُ وَالسَّلَامُ عَلَى سَيِّدِنَا وَحَبِيبِنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ
 
-🕌 {khatma_number}ᵉ khatma 🕌
+🕌 {khatma_number}ᵉ khatma OFFICIEL 🕌
 📅 Fin : {date_fr} au soir
 👤 Responsable de la khatma : {responsable}
 
