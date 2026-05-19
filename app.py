@@ -123,25 +123,13 @@ if st.button("🚀 Générer"):
 if "output" in st.session_state:
 
     # =========================
-    # 📋 BOUTON COPIER EN HAUT
+    # 📋 BOUTON COPIE (NATIVE STREAMLIT)
     # =========================
-    st.markdown(f"""
-    <button onclick="navigator.clipboard.writeText(`{st.session_state.output.replace('`','')}`)"
-    style="
-    background-color:#1f7a1f;
-    color:white;
-    padding:10px 15px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-    margin-bottom:10px;
-    ">
-    📋 Copier le résultat
-    </button>
-    """, unsafe_allow_html=True)
+    st.code(st.session_state.output)
 
+    st.info("📋 Clique dans le texte puis fais Ctrl+C (ou appui long sur téléphone)")
+    
     # =========================
-    # 📄 AFFICHAGE RESULTAT
+    # 📄 AFFICHAGE (EDITABLE)
     # =========================
     st.text_area("📋 Résultat", st.session_state.output, height=600)
