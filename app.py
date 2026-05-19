@@ -122,3 +122,19 @@ if st.button("🚀 Générer"):
 """
 
     st.text_area("📋 Copie WhatsApp", output, height=600)
+
+st.markdown(f"""
+<button onclick="navigator.clipboard.writeText(`{output.replace('`','')}`)"
+style="
+background-color:#1f7a1f;
+color:white;
+padding:10px 15px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+margin-top:10px;
+">
+📋 Copier le résultat
+</button>
+""", unsafe_allow_html=True)
